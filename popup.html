@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Xenspire — Profile Capture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <!-- ── Header ────────────────────────────────────────────── -->
+    <header id="header">
+      <div class="header-brand">
+        <svg class="brand-icon" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/>
+          <line x1="12" y1="22" x2="12" y2="15.5"/>
+          <polyline points="22 8.5 12 15.5 2 8.5"/>
+          <polyline points="2 15.5 12 8.5 22 15.5"/>
+          <line x1="12" y1="2" x2="12" y2="8.5"/>
+        </svg>
+        <span class="brand-name">Xenspire</span>
+      </div>
+      <button id="btn-capture" type="button" class="btn-capture">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/>
+          <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+        </svg>
+        Capture Profile
+      </button>
+    </header>
+
+    <!-- ── Status bar ────────────────────────────────────────── -->
+    <div id="status-bar" class="status-bar hidden">
+      <span id="status-icon" class="status-icon"></span>
+      <span id="status-text" class="status-text"></span>
+    </div>
+
+    <!-- ── Profile card ──────────────────────────────────────── -->
+    <section id="profile-card" class="profile-card hidden">
+      <div class="profile-card-inner">
+        <div class="avatar-wrap">
+          <img id="profile-avatar" class="avatar" src="" alt="Avatar" />
+          <div id="avatar-placeholder" class="avatar-placeholder">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="profile-info">
+          <h2 id="profile-name" class="profile-name"></h2>
+          <p id="profile-title" class="profile-title"></p>
+          <p id="profile-company" class="profile-company"></p>
+          <p id="profile-location" class="profile-location">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span id="profile-location-text"></span>
+          </p>
+        </div>
+      </div>
+      <div id="match-badge" class="match-badge hidden">
+        <span id="match-badge-text"></span>
+      </div>
+    </section>
+
+    <!-- ── Compare section ───────────────────────────────────── -->
+    <section id="compare-section" class="compare-section hidden">
+      <h3 class="section-header">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/>
+          <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
+          <line x1="4" y1="4" x2="9" y2="9"/>
+        </svg>
+        Compare with Server
+      </h3>
+      <div id="compare-fields" class="compare-fields"></div>
+      <button id="btn-save" type="button" class="btn-save hidden">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+          <polyline points="17 21 17 13 7 13 7 21"/>
+          <polyline points="7 3 7 8 15 8"/>
+        </svg>
+        Save Selected to Server
+      </button>
+    </section>
+
+    <!-- ── Accordion sections ────────────────────────────────── -->
+    <section id="details-section" class="details-section hidden">
+      <div class="accordion" id="acc-experience">
+        <button class="accordion-trigger" type="button" data-target="acc-experience-body">
+          <span class="accordion-icon">▸</span>
+          Experience
+          <span id="exp-count" class="badge"></span>
+        </button>
+        <div id="acc-experience-body" class="accordion-body collapsed">
+          <div id="experience-list" class="detail-list"></div>
+        </div>
+      </div>
+
+      <div class="accordion" id="acc-education">
+        <button class="accordion-trigger" type="button" data-target="acc-education-body">
+          <span class="accordion-icon">▸</span>
+          Education
+          <span id="edu-count" class="badge"></span>
+        </button>
+        <div id="acc-education-body" class="accordion-body collapsed">
+          <div id="education-list" class="detail-list"></div>
+        </div>
+      </div>
+
+      <div class="accordion" id="acc-certs">
+        <button class="accordion-trigger" type="button" data-target="acc-certs-body">
+          <span class="accordion-icon">▸</span>
+          Certifications
+          <span id="cert-count" class="badge"></span>
+        </button>
+        <div id="acc-certs-body" class="accordion-body collapsed">
+          <div id="certs-list" class="detail-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Raw JSON accordion ────────────────────────────────── -->
+    <section id="json-section" class="json-section hidden">
+      <div class="accordion">
+        <button class="accordion-trigger" type="button" data-target="json-body">
+          <span class="accordion-icon">▸</span>
+          View Raw JSON
+        </button>
+        <div id="json-body" class="accordion-body collapsed">
+          <pre id="json-raw" class="json-raw"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Empty state ───────────────────────────────────────── -->
+    <section id="empty-state" class="empty-state">
+      <div class="empty-illustration">
+        <svg viewBox="0 0 80 80" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.35">
+          <rect x="10" y="16" width="60" height="48" rx="6"/>
+          <circle cx="32" cy="35" r="8"/>
+          <line x1="44" y1="30" x2="60" y2="30"/>
+          <line x1="44" y1="38" x2="56" y2="38"/>
+          <line x1="16" y1="52" x2="64" y2="52"/>
+        </svg>
+      </div>
+      <p class="empty-title">No profile captured yet</p>
+      <p class="empty-hint">Navigate to a LinkedIn profile and click <strong>Capture Profile</strong>.</p>
+    </section>
+
+    <script src="mock-server-data.js"></script>
+    <script src="popup-compare.js"></script>
+    <script src="popup-ui.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fixture — Prototype Profile</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 640px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        color: #1a1d23;
+      }
+      h1 {
+        margin-bottom: 0.25rem;
+      }
+      .sub {
+        color: #444;
+        margin-top: 0;
+      }
+      .note {
+        margin-top: 2rem;
+        padding: 1rem;
+        background: #f0f9ff;
+        border-left: 4px solid #0d9488;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        color: #334155;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 data-proto-name data-proto-linkedin-id="amanda-dennis-842265103">Amanda Dennis</h1>
+    <p class="sub" data-proto-headline>Asset Integrity Engineer at SABIC</p>
+    <p><strong>Company:</strong> <span data-proto-company>SABIC</span></p>
+    <p><strong>Location:</strong> <span data-proto-location>Montgomery, Alabama, United States</span></p>
+    <section>
+      <h2>About</h2>
+      <p data-proto-about>
+        Over five years of experience in plastics Manufacturing (one year as a co-op in college).
+        Experienced in Reliability, Inspection, Operations Engineering, and EHS.
+      </p>
+    </section>
+
+    <div class="note">
+      <strong>Fixture page for testing.</strong><br/>
+      Open via <code>http://localhost:8765/fixture/profile-mock.html</code> after
+      starting a local server: <code>python3 -m http.server 8765</code><br/><br/>
+      The mock server data has this profile as <em>"Amanda M. Dennis"</em> with title
+      <em>"Inspection Engineer at SABIC Inc."</em> — so the compare UI will highlight
+      the Name and Title differences.
+    </div>
+  </body>
+</html>

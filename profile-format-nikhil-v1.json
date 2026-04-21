@@ -1,0 +1,692 @@
+[
+  {
+    "final_profile_json_format": {
+      "_id": {
+        "$oid": "string"
+      },
+      "profile_uuid": "string",
+      "profile_linkedin_id": "string",
+      "linkedin_num_id": "string",
+      "profile_name": "string",
+      "profile_about": "string",
+      "profile_current_position": "string",
+      "profile_url": "string",
+      "url": "string",
+      "avatar": "string",
+      "profile_location": "string",
+      "profile_country_code": "string",
+      "location_city": "string",
+      "location_state": "string",
+      "geo_point": null,
+      "company_id": "string",
+      "company_uuid": "string",
+      "company_website": "string",
+      "employees_in_linkedin": 0,
+      "experience_years": 0,
+      "open_to_work_flag": false,
+      "open_to_network_flag": false,
+      "availability_keywords": [],
+      "temp_keywords": [],
+      "staffing_company_history": [],
+      "profile_connections": 0,
+      "profile_followers": 0,
+      "profile_activity": [
+        {
+          "id": "string",
+          "img": "string",
+          "interaction": "string",
+          "link": "string",
+          "title": "string"
+        }
+      ],
+      "profile_experience_full": [
+        {
+          "company": "string",
+          "company_id": "string",
+          "company_logo_url": "string",
+          "description": "string",
+          "description_html": "string",
+          "start_date": "string",
+          "end_date": "string",
+          "duration": "string",
+          "location": "string",
+          "title": "string",
+          "url": "string",
+          "positions": [
+            {
+              "title": "string",
+              "subtitle": "string",
+              "description": "string",
+              "description_html": "string",
+              "start_date": "string",
+              "end_date": "string",
+              "meta": "string",
+              "location": "string"
+            }
+          ]
+        }
+      ],
+      "profile_last_experience": {
+        "company": "string",
+        "company_id": "string",
+        "company_logo_url": "string",
+        "description": "string",
+        "description_html": "string",
+        "start_date": "string",
+        "end_date": "string",
+        "duration": "string",
+        "location": "string",
+        "title": "string",
+        "url": "string",
+        "positions": [
+          {
+            "title": "string",
+            "subtitle": "string",
+            "description": "string",
+            "description_html": "string",
+            "start_date": "string",
+            "end_date": "string",
+            "meta": "string",
+            "location": "string"
+          }
+        ]
+      },
+      "profile_education_full": [
+        {
+          "degree": "string",
+          "field": "string",
+          "title": "string",
+          "description": "string",
+          "description_html": "string",
+          "start_year": "string",
+          "end_year": "string",
+          "institute_logo_url": "string",
+          "url": "string"
+        }
+      ],
+      "profile_last_education": "string",
+      "profile_certifications": [
+        {
+          "title": "string",
+          "subtitle": "string",
+          "credential_id": "string",
+          "credential_url": "string",
+          "meta": "string"
+        }
+      ],
+      "profile_courses": [],
+      "profile_languages": [],
+      "profile_organizations": [],
+      "profile_posts": [],
+      "profile_projects": [],
+      "profile_publications": [],
+      "profile_recommendations": [],
+      "profile_recommendations_count": 0,
+      "profile_volunteer_experience": [],
+      "created_at": {
+        "$date": "string"
+      },
+      "updated_at": {
+        "$date": "string"
+      },
+      "data_source": "string",
+      "data_source_ref": "string"
+    },
+    "reference_profiles": [
+      {
+        "profile_name": "Amanda Dennis",
+        "profile_linkedin_id": "amanda-dennis-842265103",
+        "match_status": "FULL_MATCH_CONFIRMED",
+        "source_scope": "uploaded_file"
+      },
+      {
+        "profile_name": "Maher Sarah",
+        "profile_linkedin_id": "maher-sarah-73b228102",
+        "match_status": "FULL_MATCH_CONFIRMED",
+        "source_scope": "file_library"
+      },
+      {
+        "profile_name": "Juliet Garcia, P.E.",
+        "profile_linkedin_id": "juliet-garcia-p-e-ba761ab",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "file_library",
+        "missing_or_unconfirmed_tags": [
+          "profile_current_position",
+          "company_id",
+          "company_website",
+          "open_to_work_flag"
+        ]
+      },
+      {
+        "profile_name": "Brian Dodd",
+        "profile_linkedin_id": "brian-dodd-619a8a132",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "uploaded_file",
+        "missing_or_unconfirmed_tags": [
+          "_id",
+          "profile_uuid",
+          "open_to_work_flag",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      {
+        "profile_name": "Zalmy Sorotzkin",
+        "profile_linkedin_id": "zalmy-sorotzkin-a04189105",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "uploaded_file",
+        "missing_or_unconfirmed_tags": [
+          "_id",
+          "profile_uuid",
+          "open_to_work_flag",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      {
+        "profile_name": "Lisa Hurst",
+        "profile_linkedin_id": "lisa-hurst-271a8222",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "uploaded_file",
+        "missing_or_unconfirmed_tags": [
+          "_id",
+          "profile_uuid",
+          "open_to_work_flag",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      {
+        "profile_name": "Sarfraz Dave",
+        "profile_linkedin_id": "sarfraz-dave-97125326",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "uploaded_file",
+        "missing_or_unconfirmed_tags": [
+          "_id",
+          "profile_uuid",
+          "open_to_work_flag",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      {
+        "profile_name": "Bill Danko",
+        "profile_linkedin_id": "bill-danko-8238a3152",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "uploaded_file",
+        "missing_or_unconfirmed_tags": [
+          "_id",
+          "profile_uuid",
+          "open_to_work_flag",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      {
+        "profile_name": "Debbie Patton",
+        "profile_linkedin_id": "debbie-patton-608655152",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "file_library",
+        "missing_or_unconfirmed_tags": [
+          "_id",
+          "profile_uuid",
+          "company_id",
+          "open_to_work_flag",
+          "created_at",
+          "updated_at"
+        ]
+      },
+      {
+        "profile_name": "David Lam",
+        "profile_linkedin_id": "david-lam-64a5b3106",
+        "match_status": "PARTIAL_MATCH_ONLY",
+        "source_scope": "uploaded_file",
+        "missing_or_unconfirmed_tags": [
+          "_id",
+          "profile_uuid",
+          "open_to_work_flag",
+          "created_at",
+          "updated_at"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "69ba1df3152a0edc7d0613f9"
+    },
+    "profile_uuid": "1e35060b-36cc-42d9-9d2e-188d84d3b4d1",
+    "profile_linkedin_id": "amanda-dennis-842265103",
+    "linkedin_num_id": "439571570",
+    "profile_name": "Amanda Dennis",
+    "profile_about": "Over five years of experience in plastics Manufacturing (one year as a co-op in college…",
+    "profile_current_position": "Asset Integrity Engineer at SABIC",
+    "profile_url": "https://in.linkedin.com/in/Amanda-dennis-842265103",
+    "url": "https://in.linkedin.com/in/Amanda-dennis-842265103",
+    "avatar": "https://media.licdn.com/dms/image/v2/C4E03AQHZIyrwteAT_g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1591210964647?e=2147483647&v=beta&t=tGaaOXoI3yVUJP49Xmo4CJZeDmIljqsxr851VYa1KBM",
+    "profile_location": "Montgomery, Alabama, United States",
+    "profile_country_code": "US",
+    "location_city": "montgomery",
+    "location_state": "alabama",
+    "geo_point": null,
+    "company_id": "sabic",
+    "company_uuid": "62493f7e-9b92-40da-b381-705386852209",
+    "company_website": null,
+    "employees_in_linkedin": 38358,
+    "experience_years": 9,
+    "open_to_work_flag": false,
+    "open_to_network_flag": false,
+    "availability_keywords": [],
+    "temp_keywords": [],
+    "staffing_company_history": [],
+    "profile_connections": 483,
+    "profile_followers": 489,
+    "profile_activity": [
+      {
+        "id": "7432425737892196354",
+        "img": "https://media.licdn.com/dms/image/v2/D4D22AQGRhf8OKojxSA/feedshare-shrink_800/B4DZyVH0xpJAAg-/0/1772028382707?e=2147483647&v=beta&t=Oa2cT3hyu4W-a0JZZGraLA7HbZYHM2Y-uNJ-NH7gK8w",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/ivancarillo_toyotas-competitors-thought-taiichi-ohno-activity-7432425737892196354-tY1W",
+        "title": "Toyota's competitors thought Taiichi Ohno was insane. He was letting line workers stop production over a scratched fender. They stopped laughing when…"
+      },
+      {
+        "id": "7429787267419750400",
+        "img": "https://media.licdn.com/dms/image/v2/D4D10AQEsSk1e8UcgDA/ads-video-thumbnail_720_1280/B4DZxvoCQwKEAg-/0/1771399304331?e=2147483647&v=beta&t=sz6TlevAxPr-Lj42FCgtaybsrpuKJNNSN4RGK9HPFuM",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/sabic-americas_have-a-safe-and-comfortable-flightmp4-activity-7429787267419750400-Ze5P",
+        "title": "Welcome aboard! ✈ Watch this video to find out how advanced materials from SABIC contribute to the construction of an aircraft. You can sit back…"
+      },
+      {
+        "id": "7427706725904011264",
+        "img": "https://media.licdn.com/dms/image/v2/D5610AQFK_UCIRB3axw/image-shrink_1280/B56ZxSDdaRH8Ac-/0/1770903164959?e=2147483647&v=beta&t=nOtXZSjGWTK1wbzEJsnFpUcqeEb0BAwG1DGdSSGr4Eg",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/chemical-engineering-worldd_three-phase-separator-more-httpslnkdin-activity-7427706725904011264-u7Em",
+        "title": "Three Phase Separator 👍 More👉 https://lnkd.in/dWpiihyy"
+      },
+      {
+        "id": "7424830070025781249",
+        "img": "https://media.licdn.com/dms/image/v2/D5622AQGnjmB76E3UlA/feedshare-shrink_800/B56ZwpLmWnHgAk-/0/1770217433696?e=2147483647&v=beta&t=nXFu7o2Wx2T0dg5_DVCXK0STRUDUrNx6Hsw4cfCjwMg",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/chris-witte-7349b921_grateful-leadership-manufacturing-activity-7424830070025781249-oo-9",
+        "title": "Today, February 4th, marks my final day with Ascend Performance Materials and my retirement from the industry after 39+ years. My journey has…"
+      },
+      {
+        "id": "7424346241158795267",
+        "img": "https://media.licdn.com/dms/image/v2/D4E10AQGQjvG3ivdkDg/ads-video-thumbnail_720_1280/B4EZwiTixcIMAg-/0/1770102074818?e=2147483647&v=beta&t=geMPdJRf2mGCyD6B6fMxxTypoF8SjflzedP7i8zohkM",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/ulrich-thegermanengineer_engineeringmindset-continuousimprovement-activity-7424346241158795267-5lQe",
+        "title": "SMALL CHANGES BEAT BIG INVESTMENTS. EVERY TIME. Most efficiency gains don’t come from big machines, big budgets, or complex technology. They come…"
+      },
+      {
+        "id": "7424445962837774337",
+        "img": "https://static.licdn.com/aero-v1/sc/h/53n89ecoxpr1qrki1do3alazb",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/can-i-bring-my-baby-to-the-interview-activity-7424445962837774337-9tuf",
+        "title": "“Can I bring my baby to the interview?” The message came in at 11 PM: “Hi, I have an interview with you tomorrow at 2 PM. My childcare fell…"
+      },
+      {
+        "id": "7421560064903192576",
+        "img": "https://media.licdn.com/dms/image/sync/v2/D4E27AQEEVkh9RMWM0Q/articleshare-shrink_1280_800/B4EZvnFlLDG4AQ-/0/1769108558919?e=2147483647&v=beta&t=0xS3pI-vMus-Sgap6FDADEY6mcJp0brum33cxYgeg5w",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/adamrkrueger_2026-chemical-engineering-compensation-report-activity-7421560064903192576-MM2L",
+        "title": "The 2026 Chemical Engineering Compensation Report is now available - the link to the full report below. Many thanks to the 1,947 people who submitted…"
+      },
+      {
+        "id": "7420176171889270784",
+        "img": "https://static.licdn.com/aero-v1/sc/h/53n89ecoxpr1qrki1do3alazb",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/gskelton_after-more-than-eight-years-today-is-my-activity-7420176171889270784-KDUo",
+        "title": "After more than eight years, today is my final day at SABIC. It's been a great run, from launching major new investments in the US to helping to lead…"
+      },
+      {
+        "id": "7415514624805978112",
+        "img": "https://media.licdn.com/dms/image/v2/D5622AQG9T-bldUi-qQ/feedshare-shrink_2048_1536/B56ZukzQZGHMAk-/0/1767996458735?e=2147483647&v=beta&t=-HHSblrRea7_uQgx2LF76zmS5S6TL3e38_W2qrMU2kU",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/chris-hardman-pe-pmp-cssbb-2278028a_engineer-plantengineer-engineering-activity-7415514624805978112-IfTv",
+        "title": "Just landed a new job as a plant engineer, but already getting overwhelmed? Never fear! We can help with your \"to do\" list. #engineer #plantengineer…"
+      },
+      {
+        "id": "7414737870340632576",
+        "img": "https://media.licdn.com/dms/image/v2/D4E05AQHGGa8cE2Szcg/videocover-high/B4EZuZwwL.J4BU-/0/1767811255054?e=2147483647&v=beta&t=ajjXFvzVzwhRW9MWLjRs7lqhdv9IFocM70po15OJWJE",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/florian-palatini_lean-safety-activity-7414737870340632576-fQBQ",
+        "title": "Road zipper to improve traffic flow⁉️ Any lean analogies compared to manufacturing processes?"
+      },
+      {
+        "id": "7413036407407108096",
+        "img": "https://media.licdn.com/dms/image/v2/D4E10AQHtikmM0jLi3w/image-shrink_1280/B4EZuBlUReIQAM-/0/1767405602755?e=2147483647&v=beta&t=dNQRcthSxQxZ-34YXCZa-Iz7fVLh5r9i98kIYPQpADw",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/yourdigitalbrain_this-device-is-a-digital-sundial-an-engineering-activity-7413036407407108096-mXRD",
+        "title": "This device is a digital sundial, an engineering piece that displays the time through numbers formed by sunlight. It does not require moving parts or…"
+      },
+      {
+        "id": "7405276076542722048",
+        "img": "https://media.licdn.com/dms/image/sync/v2/D5627AQFgC6Eo1ARPxQ/articleshare-shrink_800/articleshare-shrink_800/0/1737967587157?e=2147483647&v=beta&t=kOs9chv54Ib-4ar5pXMl9GW8QQ_WkPzqD0ntH-lJ_wU",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/united-states-chemical-safety-and-hazard-investigation-board_uscsb-activity-7405276076542722048-iUsz",
+        "title": "The CSB’s highly popular YouTube Channel recently achieved a significant milestone: surpassing 400,000 subscribers. Such a large number of…"
+      },
+      {
+        "id": "7405736793310113792",
+        "img": "https://media.licdn.com/dms/image/v2/D5622AQF-qJklqO8bsQ/feedshare-shrink_1280/B56ZsYMMKFIkAs-/0/1765637421163?e=2147483647&v=beta&t=YFHOlY-CAK_1HoFA9LyTEXSQAAieBXJZGJyytGkjHy4",
+        "interaction": "Liked by Amanda Dennis",
+        "link": "https://www.linkedin.com/posts/bert-pulitzer-b6946117_makes-total-sense-doesnt-it-activity-7405736793310113792-5F9s",
+        "title": "Makes total sense doesn’t it…."
+      }
+    ],
+    "profile_experience_full": [
+      {
+        "company": "SABIC",
+        "company_id": "sabic",
+        "company_logo_url": null,
+        "description_html": null,
+        "duration": "7 years 4 months",
+        "location": "Lowndes County, Alabama, United States",
+        "title": "SABIC",
+        "url": "https://sa.linkedin.com/company/sabic?trk=public_profile_experience-group-header",
+        "positions": [
+          {
+            "description": "Reliablity/Mechanical Integrity engineer focusing mainly on PRD program and RBI.",
+            "description_html": "Reliablity/Mechanical Integrity engineer focusing mainly on PRD program and RBI. <!---->",
+            "end_date": "Present",
+            "location": "Lowndes County, Alabama, United States",
+            "meta": "May 2023 - Present 2 years 6 months",
+            "start_date": "May 2023",
+            "subtitle": "SABIC",
+            "title": "Asset Engineer"
+          },
+          {
+            "description": "Static Equipment Inspection",
+            "description_html": "Static Equipment Inspection <!---->",
+            "end_date": "May 2023",
+            "location": "Mount Vernon, Indiana, United States",
+            "meta": "Sep 2020 - May 2023 2 years 9 months",
+            "start_date": "Sep 2020",
+            "subtitle": "SABIC",
+            "title": "Inspection Engineer"
+          },
+          {
+            "description": "Operations Engineering and Reliabilty.",
+            "description_html": "Operations Engineering and Reliabilty. <!---->",
+            "end_date": "Aug 2020",
+            "location": "Burkville, Alabama",
+            "meta": "Aug 2019 - Aug 2020 1 year 1 month",
+            "start_date": "Aug 2019",
+            "subtitle": "SABIC",
+            "title": "SEeD Engineer"
+          },
+          {
+            "description": "Completed rotations in two manufacturing areas at the Mt Vernon site. The first was as an Environmental Health and Safety Engineer at the Brine Recovery Unit. The second was as a Reliability Engineer specializing in BOM creation.",
+            "description_html": "Completed rotations in two manufacturing areas at the Mt Vernon site. The first was as an Environmental Health and Safety Engineer at the Brine Recovery Unit. The second was as a Reliability Engineer specializing in BOM creation. <!---->",
+            "end_date": "Aug 2019",
+            "location": "Mt. vernon, Indiana",
+            "meta": "Jul 2018 - Aug 2019 1 year 2 months",
+            "start_date": "Jul 2018",
+            "subtitle": "SABIC",
+            "title": "SEeD at SABIC"
+          }
+        ]
+      },
+      {
+        "company": "SABIC",
+        "company_id": "sabic",
+        "company_logo_url": "https://media.licdn.com/dms/image/v2/C4E0BAQE6KBvgsKE1jA/company-logo_100_100/company-logo_100_100/0/1630568573759/sabic_logo?e=2147483647&v=beta&t=8tonwC8KIVS64ahBvQ10vd9Qx9bgYsQg5KPaADTYWa0",
+        "description": "Completed internship working in three different Units at the Burkville, Alabama site. Completed plant maintenance projects for the Resin and Utilities Units. Completed a term as a Reliability Intern Engineer, working with methodologies such as RCM and RCA.",
+        "description_html": "Completed internship working in three different Units at the Burkville, Alabama site. Completed plant maintenance projects for the Resin and Utilities Units. Completed a term as a Reliability Intern Engineer, working with methodologies such as RCM and RCA. <!---->",
+        "end_date": "Aug 2017",
+        "location": "Montgomery, Alabama Area",
+        "start_date": "Jan 2016",
+        "title": "Co Op",
+        "url": "https://sa.linkedin.com/company/sabic"
+      },
+      {
+        "company": "Naval Air Systems Command (NAVAIR)",
+        "company_id": "naval-air-systems-command",
+        "company_logo_url": "https://media.licdn.com/dms/image/v2/C560BAQEFYJg7y1weLA/company-logo_100_100/company-logo_100_100/0/1630566527212/naval_air_systems_command_logo?e=2147483647&v=beta&t=LtxWu4TFL13XDko9AYdEzmWN1-A6U9XgNZJFHe9MKfc",
+        "description": "Worked in both the Corrosion laboratory and the Additive Manufacturing competencies. I completed research and testing of coatings for the underside of aircraft carriers for the former. I shadowed and learned the different methods for Non-Destructive Testing, and researched the manufacturing of flight-critical 3D printed parts for airplanes for the latter.",
+        "description_html": "Worked in both the Corrosion laboratory and the Additive Manufacturing competencies. I completed research and testing of coatings for the underside of aircraft carriers for the former. I shadowed and learned the different methods for Non-Destructive Testing, and researched the manufacturing of flight-critical 3D printed parts for airplanes for the latter. <!---->",
+        "end_date": "Aug 2015",
+        "location": "Patuxent River, Maryland",
+        "start_date": "Jun 2015",
+        "title": "Summer Intern",
+        "url": "https://www.linkedin.com/company/naval-air-systems-command"
+      }
+    ],
+    "profile_last_experience": {
+      "company": "SABIC",
+      "company_id": "sabic",
+      "company_logo_url": null,
+      "description_html": null,
+      "duration": "7 years 4 months",
+      "location": "Lowndes County, Alabama, United States",
+      "title": "SABIC",
+      "url": "https://sa.linkedin.com/company/sabic?trk=public_profile_experience-group-header",
+      "positions": [
+        {
+          "description": "Reliablity/Mechanical Integrity engineer focusing mainly on PRD program and RBI.",
+          "description_html": "Reliablity/Mechanical Integrity engineer focusing mainly on PRD program and RBI. <!---->",
+          "end_date": "Present",
+          "location": "Lowndes County, Alabama, United States",
+          "meta": "May 2023 - Present 2 years 6 months",
+          "start_date": "May 2023",
+          "subtitle": "SABIC",
+          "title": "Asset Engineer"
+        },
+        {
+          "description": "Static Equipment Inspection",
+          "description_html": "Static Equipment Inspection <!---->",
+          "end_date": "May 2023",
+          "location": "Mount Vernon, Indiana, United States",
+          "meta": "Sep 2020 - May 2023 2 years 9 months",
+          "start_date": "Sep 2020",
+          "subtitle": "SABIC",
+          "title": "Inspection Engineer"
+        },
+        {
+          "description": "Operations Engineering and Reliabilty.",
+          "description_html": "Operations Engineering and Reliabilty. <!---->",
+          "end_date": "Aug 2020",
+          "location": "Burkville, Alabama",
+          "meta": "Aug 2019 - Aug 2020 1 year 1 month",
+          "start_date": "Aug 2019",
+          "subtitle": "SABIC",
+          "title": "SEeD Engineer"
+        },
+        {
+          "description": "Completed rotations in two manufacturing areas at the Mt Vernon site. The first was as an Environmental Health and Safety Engineer at the Brine Recovery Unit. The second was as a Reliability Engineer specializing in BOM creation.",
+          "description_html": "Completed rotations in two manufacturing areas at the Mt Vernon site. The first was as an Environmental Health and Safety Engineer at the Brine Recovery Unit. The second was as a Reliability Engineer specializing in BOM creation. <!---->",
+          "end_date": "Aug 2019",
+          "location": "Mt. vernon, Indiana",
+          "meta": "Jul 2018 - Aug 2019 1 year 2 months",
+          "start_date": "Jul 2018",
+          "subtitle": "SABIC",
+          "title": "SEeD at SABIC"
+        }
+      ]
+    },
+    "profile_education_full": [
+      {
+        "description": null,
+        "description_html": null,
+        "end_year": "2018",
+        "institute_logo_url": null,
+        "start_year": "2013",
+        "title": "University of Alabama",
+        "url": "https://www.linkedin.com/school/university-of-alabama/"
+      }
+    ],
+    "profile_last_education": "University of Alabama",
+    "profile_certifications": [
+      {
+        "credential_id": "110625",
+        "credential_url": null,
+        "meta": "Issued Apr 2023 Credential ID 110625",
+        "subtitle": "API - American Petroleum Institute",
+        "title": "API 570 - Piping Inspector"
+      },
+      {
+        "credential_id": null,
+        "credential_url": null,
+        "meta": "Issued Jul 2022",
+        "subtitle": "API - American Petroleum Institute",
+        "title": "API 510 Pressure Vessel Inspector"
+      },
+      {
+        "credential_id": "104804",
+        "credential_url": null,
+        "meta": "Issued Jan 2022 Credential ID 104804",
+        "subtitle": "NACE International",
+        "title": "CIP Level 1 Coatings Inspector"
+      },
+      {
+        "credential_id": "129888",
+        "credential_url": null,
+        "meta": "Issued Nov 2025 Expires Nov 2028 Credential ID 129888",
+        "subtitle": "API - American Petroleum Institute",
+        "title": "Aboveground Storage Tanks Inspector Certification (API 653)"
+      }
+    ],
+    "profile_courses": null,
+    "profile_languages": null,
+    "profile_organizations": null,
+    "profile_posts": null,
+    "profile_projects": null,
+    "profile_publications": null,
+    "profile_recommendations": null,
+    "profile_recommendations_count": null,
+    "profile_volunteer_experience": null,
+    "created_at": {
+      "$date": "2026-03-18T03:37:22.673Z"
+    },
+    "updated_at": {
+      "$date": "2026-03-18T09:09:50.148Z"
+    },
+    "data_source": "brightdata",
+    "data_source_ref": "3-states-al-la-ms-v1/2026_03/bd_3s_almsla_20260316_122330.101.json"
+  },
+  {
+    "_id": {
+      "$oid": "69b9a710152a0edc7d054d5d"
+    },
+    "profile_uuid": "429c13e7-849c-4c82-9019-16a85f83e239",
+    "profile_linkedin_id": "maher-sarah-73b228102",
+    "linkedin_num_id": "436507679",
+    "profile_name": "Maher Sarah",
+    "profile_about": "Digital construction: Driving regional expansion of Digital Services across the US and…",
+    "profile_current_position": "Digital Solutions Sales Manager USA",
+    "profile_url": "https://www.linkedin.com/in/maher-sarah-73b228102",
+    "url": "https://www.linkedin.com/in/maher-sarah-73b228102",
+    "avatar": "https://media.licdn.com/dms/image/v2/D4D03AQGjqDubadxdiQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1689085810789?e=2147483647&v=beta&t=hH3FnN8OZmM6Pa1c-ZJy4Nf5CJlox5be4T7oW90C27I",
+    "profile_location": "Spring, Texas, United States",
+    "profile_country_code": null,
+    "location_city": "spring",
+    "location_state": "texas",
+    "geo_point": null,
+    "company_id": "doka-usa",
+    "company_uuid": "330f14d9-138f-4950-bde8-ba70899f9231",
+    "company_website": null,
+    "employees_in_linkedin": 263,
+    "experience_years": 13,
+    "open_to_work_flag": false,
+    "open_to_network_flag": false,
+    "availability_keywords": [],
+    "temp_keywords": [
+      "temp"
+    ],
+    "staffing_company_history": [],
+    "profile_connections": null,
+    "profile_followers": null,
+    "profile_activity": [
+      {
+        "id": "7419062767988592640",
+        "img": "https://media.licdn.com/dms/image/v2/D5622AQHLt8QGii8RvA/feedshare-shrink_2048_1536/B56ZvXORegHMAo-/0/1768842401916?e=2147483647&v=beta&t=vgSDyR_nIKqHpVWl6wCBkk6_ODRgxmWonYJNb5afy0I",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/pietrodasacco_teambuilding-dokaconnect-wemakeitwork-activity-7419062767988592640-uimh",
+        "title": "Doka USA / Doka — Taking the team out for lunch can have a meaningful impact beyond the meal itself. Sharing food creates space for conversation…"
+      },
+      {
+        "id": "7419046198508126209",
+        "img": "https://media.licdn.com/dms/image/v2/D4D10AQE6HTj9MK6xOQ/videocover-high/B4DZvW_GzAJgBE-/0/1768838428187?e=2147483647&v=beta&t=yx6R1wJWch3_oP2AsHDGUaRspZVB59Coja_uwlHFEDE",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/doka-usa_dokaatconexpo-conexpo2026-wemakeitwork-activity-7419046198508126209-gNQM",
+        "title": "SuperClimber — Redefining High-Rise Core Construction For contractors building towers, speed and safety are everything — and that’s where the Doka…"
+      },
+      {
+        "id": "7425689805591601152",
+        "img": "https://media.licdn.com/dms/image/v2/D4D10AQFOSAc6eGgvWg/image-shrink_800/B4DZw1YsbhJ0Ag-/0/1770422193085?e=2147483647&v=beta&t=8_tEbwIIpt_-oG2HVXL5vu2Hz_M7IATvUpkAKLbQiA8",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/doka-usa_wemakeitwork-dokaatconexpo-behindthebuild-activity-7425689805591601152-NsG7",
+        "title": "Our trucks are rolling to Las Vegas 🚚💨 From our Loma Linda, California branch, our team is pre-assembling, packing, and loading up stacks of…"
+      },
+      {
+        "id": "7428226710808084480",
+        "img": "https://media.licdn.com/dms/image/v2/D4D22AQHODdCvXwqLAw/feedshare-shrink_800/B4DZxZc0evKYAg-/0/1771027255190?e=2147483647&v=beta&t=9ycSNuYTXjDa4bGqj_e_FZP_3eOxTup1aNs1BEPW6IM",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/joe-sandoval-0368a713_supercurve-for-radius-walls-activity-7428226710808084480-iaTF",
+        "title": "Supercurve for radius walls!"
+      },
+      {
+        "id": "7428074960012623872",
+        "img": "https://media.licdn.com/dms/image/v2/D4E05AQETnVQK_UGQlg/videocover-high/B4EZxXSxnRHgBY-/0/1770991067565?e=2147483647&v=beta&t=3eCohMh1k_pNK86bfkRvmApikWYr82vxX_rYU9nBN9w",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://fr.linkedin.com/posts/cedricmarcotte_canadianconcreteexpo-doka-innovation-activity-7428074960012623872-npN3",
+        "title": "Retour sur le Canadian Concrete Expo 2026 – Toronto Notre participation au Canadian Concrete Expo 2026 à Toronto a été un véritable succès, riche…"
+      },
+      {
+        "id": "7427769379947196416",
+        "img": "https://media.licdn.com/dms/image/v2/D5622AQEAlu4ckEb6yA/feedshare-shrink_800/B56ZxRaXvCKgAg-/0/1770892393581?e=2147483647&v=beta&t=Pmn-B3gvV2K2vWqsbh5aq4KxBA29BYWpt3Dx5WM4lQg",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/pietrodasacco_thank-you-construction-tech-review-doka-activity-7427769379947196416-OS1H",
+        "title": "Thank you Construction Tech Review! Doka USA /// Doka ///"
+      },
+      {
+        "id": "7424059210142978048",
+        "img": "https://media.licdn.com/dms/image/v2/D4D22AQHcV3q5OkjyhA/feedshare-shrink_2048_1536/B4DZweOgocG4Ak-/0/1770033646329?e=2147483647&v=beta&t=Kqgh0iy3erV340cBDYY7fXv-JSUPiHez_w37UssGBnM",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/stefan-scheuchelbauer_wemakeitwork-wearedoka-doka-activity-7424059210142978048-mk0W",
+        "title": "🚧 No more guesswork when pouring concrete. On a residential project in Vilnius, teams used 𝗗𝗼𝗸𝗮𝗫𝗮𝗰𝘁 𝗣𝗿𝗲𝘀𝘀𝘂𝗿𝗲 to monitor fresh…"
+      },
+      {
+        "id": "7423289962395176960",
+        "img": "https://media.licdn.com/dms/image/v2/D4D10AQFDHBzyMGuWZg/image-shrink_800/B4DZwSow3RGYAk-/0/1769839202289?e=2147483647&v=beta&t=92OwiEtgEmWqYYEJpOr6Q-3JpXgiF_phvTb3UlY27H8",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/taher-rihawi-8b743988_doka-openday-uae-activity-7423289962395176960-ygrb",
+        "title": "The final countdown is on. In just five days we open our doors to our partners across the UAE and Oman for the Doka Open Day. Looking forward to…"
+      },
+      {
+        "id": "7423204054350356480",
+        "img": "https://media.licdn.com/dms/image/v2/D5622AQEYWz2MDQwqLA/feedshare-shrink_800/B56ZwSEvlOHUAg-/0/1769829761132?e=2147483647&v=beta&t=pPzNhIcQHAYBCHF5yM8woKBuHwQHWjw-tlNT9Ua1HUk",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/joe-sandoval-0368a713_frami-for-box-culverts-activity-7423204054350356480-IHXQ",
+        "title": "Frami for box culverts"
+      },
+      {
+        "id": "7422739346170171392",
+        "img": "https://media.licdn.com/dms/image/v2/D5622AQFIG5H-vJr98g/feedshare-shrink_800/B56ZwLeGc9IwAg-/0/1769718966447?e=2147483647&v=beta&t=WHbUCjtaUfE_7vnk8I7br_Ysqrl3SDTs9b7zx1lutJs",
+        "interaction": "Liked by Maher Sarah",
+        "link": "https://www.linkedin.com/posts/pietrodasacco_infrastructure-dokafarwest-engineering-activity-7422739346170171392-UX0Y",
+        "title": "Resharing this post from a few months ago with an"
+      }
+    ],
+    "profile_experience_full": null,
+    "profile_last_experience": null,
+    "profile_education_full": null,
+    "profile_last_education": null,
+    "profile_certifications": null,
+    "profile_courses": null,
+    "profile_languages": null,
+    "profile_organizations": null,
+    "profile_posts": null,
+    "profile_projects": null,
+    "profile_publications": null,
+    "profile_recommendations": null,
+    "profile_recommendations_count": null,
+    "profile_volunteer_experience": null,
+    "created_at": {
+      "$date": "2026-03-17T19:10:08.355Z"
+    },
+    "updated_at": null,
+    "data_source": null,
+    "data_source_ref": null
+  }
+]

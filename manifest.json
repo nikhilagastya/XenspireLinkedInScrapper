@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Profile Capture Prototype",
+  "version": "0.1.0",
+  "description": "MV3 prototype: DOM capture, review, mock or live POST from service worker.",
+  "action": {
+    "default_title": "Profile Capture Prototype",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://linkedin.com/*",
+    "https://*.linkedin.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*",
+        "https://linkedin.com/*",
+        "https://*.linkedin.com/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
