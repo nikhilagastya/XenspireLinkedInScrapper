@@ -81,16 +81,22 @@ function hasDifferences(compareResults) {
 /**
  * Build a partial update payload from selected diff fields.
  * Only includes fields where the user checked "update with LinkedIn value".
+ * If editedValues are provided, those take priority over scraped profile values.
  *
  * @param {Array<string>} selectedKeys - Keys the user chose to update
  * @param {Object} scrapedProfile      - The scraped profile data
+ * @param {Object} [editedValues={}]   - Map of fieldKey → user-edited value (from editable inputs)
  * @returns {Object}                   - Partial update payload
  */
-function buildUpdatePayload(selectedKeys, scrapedProfile) {
+function buildUpdatePayload(selectedKeys, scrapedProfile, editedValues = {}) {
   const payload = {};
   for (const field of COMPARE_FIELDS) {
     if (selectedKeys.includes(field.key)) {
-      payload[field.key] = field.extract(scrapedProfile);
+      // Use edited value if available, otherwise fall back to scraped value
+      payload[field.key] =
+        editedValues.hasOwnProperty(field.key)
+          ? editedValues[field.key]
+          : field.extract(scrapedProfile);
     }
   }
   return payload;

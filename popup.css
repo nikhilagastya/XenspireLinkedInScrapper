@@ -373,6 +373,62 @@ body::-webkit-scrollbar-thumb {
   color: #6b7280;
 }
 
+/* Editable input in extracted column */
+.compare-edit-input {
+  display: block;
+  width: 100%;
+  padding: 5px 8px;
+  margin-top: 3px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.compare-edit-input:hover {
+  border-color: #94a3b8;
+}
+
+.compare-edit-input:focus {
+  border-color: #0d9488;
+  box-shadow: 0 0 0 2.5px rgba(13, 148, 136, 0.15);
+  background: #fff;
+}
+
+/* Edited indicator — subtle left accent + background tint */
+.compare-edit-input.is-edited {
+  border-left: 3px solid #0d9488;
+  background: #f0fdfa;
+}
+
+/* Row edited state */
+.compare-row.was-edited .compare-field-label::after {
+  content: " · edited";
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #0d9488;
+  margin-left: 4px;
+}
+
+/* Server value text */
+.compare-server-text {
+  display: block;
+  margin-top: 3px;
+  padding: 5px 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #475569;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
 /* Highlighted diff */
 .compare-row.has-diff .compare-value.linkedin-value {
   background: #fefce8;

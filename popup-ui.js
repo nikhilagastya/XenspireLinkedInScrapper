@@ -15,9 +15,13 @@ function hide(el) {
 }
 
 function escapeHtml(str) {
-  const div = document.createElement("div");
-  div.textContent = str;
-  return div.innerHTML;
+  if (str == null) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
 }
 
 /* ─── Status Bar ─────────────────────────────────────────────────── */
@@ -122,37 +126,118 @@ function renderCompareFields(compareResults) {
       </div>
       <div class="compare-row-values">
         <div class="compare-value linkedin-value">
-          <span class="compare-value-label">LinkedIn</span>
-          ${escapeHtml(result.linkedinValue)}
+          <span class="compare-value-label">LinkedIn (Extracted)</span>
+          <input
+            type="text"
+            class="compare-edit-input"
+            data-field-key="${result.key}"
+            data-original="${escapeHtml(result.linkedinValue)}"
+            data-server="${escapeHtml(result.serverValue)}"
+            value="${escapeHtml(result.linkedinValue)}"
+          />
         </div>
         <div class="compare-value server-value">
           <span class="compare-value-label">Server</span>
-          ${escapeHtml(result.serverValue)}
+          <span class="compare-server-text">${escapeHtml(result.serverValue)}</span>
         </div>
       </div>
-      ${
-        result.isMatch
-          ? ""
-          : `<div class="compare-save-check">
-               <input type="checkbox" id="save-${result.key}" data-field-key="${result.key}" checked />
-               <label for="save-${result.key}">Update server with LinkedIn value</label>
-             </div>`
-      }
+      <div class="compare-save-check ${result.isMatch ? "hidden" : ""}">
+        <input type="checkbox" id="save-${result.key}" data-field-key="${result.key}" checked />
+        <label for="save-${result.key}">Update server with LinkedIn value</label>
+      </div>
     `;
 
     container.appendChild(row);
   }
 
-  show(document.getElementById("compare-section"));
+  // Attach live edit listeners to all editable inputs
+  container.querySelectorAll(".compare-edit-input").forEach((input) => {
+    input.addEventListener("input", handleCompareInputChange);
+  });
 
-  // Show save button only if there are differences
-  const hasDiffs = compareResults.some((r) => !r.isMatch);
+  show(document.getElementById("compare-section"));
+  refreshSaveButtonVisibility();
+}
+
+/**
+ * Handle real-time edits to extracted value inputs.
+ * Updates match/diff status and checkbox visibility.
+ */
+function handleCompareInputChange(e) {
+  const input = e.target;
+  const fieldKey = input.dataset.fieldKey;
+  const serverValue = input.dataset.server;
+  const originalValue = input.dataset.original;
+  const currentValue = input.value.trim();
+
+  const row = input.closest(".compare-row");
+  if (!row) return;
+
+  const statusBadge = row.querySelector(".compare-status");
+  const saveCheck = row.querySelector(".compare-save-check");
+
+  // Determine if edited value matches server
+  const normalizedCurrent = currentValue.toLowerCase().replace(/\s+/g, " ").trim();
+  const normalizedServer = (serverValue || "").toLowerCase().replace(/\s+/g, " ").trim();
+  const isNowMatch = normalizedCurrent === normalizedServer;
+
+  // Determine if the value was edited from the original scraped value
+  const normalizedOriginal = (originalValue || "").toLowerCase().replace(/\s+/g, " ").trim();
+  const isEdited = normalizedCurrent !== normalizedOriginal;
+
+  // Update row class
+  row.classList.toggle("has-diff", !isNowMatch);
+  row.classList.toggle("was-edited", isEdited);
+
+  // Update status badge
+  if (isNowMatch) {
+    statusBadge.className = "compare-status status-match";
+    statusBadge.textContent = "✓ Match";
+  } else {
+    statusBadge.className = "compare-status status-diff";
+    statusBadge.textContent = isEdited ? "✏️ Edited" : "⚡ Different";
+  }
+
+  // Toggle edited indicator on input
+  input.classList.toggle("is-edited", isEdited);
+
+  // Show/hide checkbox row
+  if (isNowMatch) {
+    saveCheck.classList.add("hidden");
+    const cb = saveCheck.querySelector('input[type="checkbox"]');
+    if (cb) cb.checked = false;
+  } else {
+    saveCheck.classList.remove("hidden");
+    const cb = saveCheck.querySelector('input[type="checkbox"]');
+    if (cb) cb.checked = true;
+  }
+
+  refreshSaveButtonVisibility();
+}
+
+/**
+ * Show/hide the Save button based on whether any diffs exist.
+ */
+function refreshSaveButtonVisibility() {
+  const hasDiffs = document.querySelectorAll(".compare-row.has-diff").length > 0;
   const saveBtn = document.getElementById("btn-save");
   if (hasDiffs) {
     show(saveBtn);
   } else {
     hide(saveBtn);
   }
+}
+
+/**
+ * Get the current edited values from all compare input fields.
+ * @returns {Object} Map of fieldKey → current edited value
+ */
+function getEditedCompareValues() {
+  const values = {};
+  document.querySelectorAll(".compare-edit-input").forEach((input) => {
+    values[input.dataset.fieldKey] = input.value.trim();
+  });
+  return values;
 }
 
 /* ─── Accordion Detail Sections ──────────────────────────────────── */

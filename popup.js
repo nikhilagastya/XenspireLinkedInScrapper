@@ -131,7 +131,7 @@ async function handleSave() {
     return;
   }
 
-  const updatePayload = buildUpdatePayload(selectedKeys, currentProfile);
+  const updatePayload = buildUpdatePayload(selectedKeys, currentProfile, getEditedCompareValues());
 
   btnSave.disabled = true;
   showStatus("info", "Saving to server…");
