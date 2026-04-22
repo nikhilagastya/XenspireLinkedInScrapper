@@ -168,117 +168,14 @@ function extractLinkedInProfile() {
   return { profile, warnings };
 }
 
-/* ─── fixture extractor (localhost demo) ─────────────────────────────── */
 
-function extractFixtureProfile() {
-  const warnings = [];
-  const nameEl = document.querySelector("[data-proto-name]");
-  const headlineEl = document.querySelector("[data-proto-headline]");
-  const companyEl = document.querySelector("[data-proto-company]");
-  const locationEl = document.querySelector("[data-proto-location]");
-  const aboutEl = document.querySelector("[data-proto-about]");
-
-  const profileName = text(nameEl);
-  const headline = text(headlineEl);
-  const company = text(companyEl);
-  const location = text(locationEl);
-  const about = text(aboutEl);
-
-  // Read linkedin ID from data attribute, fallback to "fixture-demo"
-  const linkedinIdEl = document.querySelector("[data-proto-linkedin-id]");
-  const linkedinId = linkedinIdEl
-    ? linkedinIdEl.getAttribute("data-proto-linkedin-id")
-    : "fixture-demo";
-
-  if (!profileName) warnings.push("Fixture missing [data-proto-name]");
-
-  // Build a minimal experience entry from the company name
-  const experienceEntry = company
-    ? {
-        company: company,
-        company_id: slugify(company),
-        company_logo_url: null,
-        description: "",
-        description_html: null,
-        start_date: "",
-        end_date: "Present",
-        duration: "",
-        location: location,
-        title: headline,
-        url: "",
-        positions: [],
-      }
-    : null;
-
-  const profile = {
-    _id: null,
-    profile_uuid: null,
-    profile_linkedin_id: linkedinId,
-    linkedin_num_id: null,
-    profile_name: profileName,
-    profile_about: about,
-    profile_current_position: headline,
-    profile_url: window.location.href,
-    url: window.location.href,
-    avatar: null,
-    profile_location: location,
-    profile_country_code: null,
-    location_city: "",
-    location_state: "",
-    geo_point: null,
-    company_id: slugify(company),
-    company_uuid: null,
-    company_website: null,
-    employees_in_linkedin: null,
-    experience_years: null,
-    open_to_work_flag: false,
-    open_to_network_flag: false,
-    availability_keywords: [],
-    temp_keywords: [],
-    staffing_company_history: [],
-    profile_connections: null,
-    profile_followers: null,
-    profile_activity: [],
-    profile_experience_full: experienceEntry ? [experienceEntry] : [],
-    profile_last_experience: experienceEntry,
-    profile_education_full: [],
-    profile_last_education: null,
-    profile_certifications: [],
-    profile_courses: null,
-    profile_languages: null,
-    profile_organizations: null,
-    profile_posts: null,
-    profile_projects: null,
-    profile_publications: null,
-    profile_recommendations: null,
-    profile_recommendations_count: null,
-    profile_volunteer_experience: null,
-    created_at: null,
-    updated_at: null,
-    data_source: "chrome_extension_fixture",
-    data_source_ref: null,
-  };
-
-  return { profile, warnings };
-}
 
 /* ─── main entry point ───────────────────────────────────────────────── */
 
 function extractProfile() {
   const hostname = window.location.hostname;
 
-  if (hostname === "localhost" || hostname === "127.0.0.1") {
-    const { profile, warnings } = extractFixtureProfile();
-    return {
-      profile,
-      meta: {
-        capturedAt: new Date().toISOString(),
-        source: hostname,
-        profileUrl: window.location.href,
-        warnings,
-      },
-    };
-  }
+
 
   if (hostname.endsWith("linkedin.com")) {
     const { profile, warnings } = extractLinkedInProfile();
