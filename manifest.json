@@ -10,13 +10,23 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab", "scripting", "cookies"],
   "host_permissions": [
     "https://www.linkedin.com/*",
     "https://linkedin.com/*",
-    "https://*.linkedin.com/*"
+    "https://*.linkedin.com/*",
+    "https://sandbox.platform.xenhirely.com/*"
   ],
   "content_scripts": [
+    {
+      "matches": [
+        "https://sandbox.platform.xenhirely.com/*"
+      ],
+      "js": [
+        "xenhirely-auth.js"
+      ],
+      "run_at": "document_idle"
+    },
     {
       "matches": [
         "https://www.linkedin.com/*",

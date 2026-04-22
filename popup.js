@@ -167,9 +167,44 @@ async function handleSave() {
   }
 }
 
+/* ─── Authentication Flow ──────────────────────────────────────────── */
+
+// Since the exact cookie name isn't specified, we use a placeholder that the user can update later.
+// Or we can check if ANY cookie exists for the domain as a fallback.
+const XENHIRELY_AUTH_URL = "https://sandbox.platform.xenhirely.com/xenhirely/sign-in/";
+
+async function checkAuthAndInit() {
+  const loginView = document.getElementById("login-view");
+  const appView = document.getElementById("app-view");
+  
+  try {
+    // Read the token that was synced by xenhirely-auth.js
+    const result = await chrome.storage.local.get(["xenhirely_auth_token"]);
+    const isAuthenticated = !!result.xenhirely_auth_token;
+    
+    if (isAuthenticated) {
+      // User is logged in, show app
+      loginView.classList.add("hidden");
+      appView.classList.remove("hidden");
+    } else {
+      // User is NOT logged in, show login screen
+      appView.classList.add("hidden");
+      loginView.classList.remove("hidden");
+    }
+  } catch (err) {
+    console.error("Failed to read storage:", err);
+    // Default to showing login on error
+    appView.classList.add("hidden");
+    loginView.classList.remove("hidden");
+  }
+}
+
 /* ─── Init ───────────────────────────────────────────────────────── */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Check auth first
+  checkAuthAndInit();
+
   // Accordion setup
   initAccordions();
 
@@ -178,4 +213,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Save button
   document.getElementById("btn-save").addEventListener("click", handleSave);
+  
+  // Sign In button
+  document.getElementById("btn-signin").addEventListener("click", () => {
+    chrome.tabs.create({ url: XENHIRELY_AUTH_URL });
+  });
 });
