@@ -335,7 +335,7 @@ body::-webkit-scrollbar-thumb {
 .compare-row-values {
   padding: 4px 12px 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 6px;
 }
 
@@ -536,20 +536,27 @@ body::-webkit-scrollbar-thumb {
 }
 
 .accordion-icon {
-  font-size: 11px;
+  margin-left: auto;
+  font-size: 10px;
   color: #94a3b8;
   transition: transform 0.2s ease;
-  display: inline-block;
-  width: 14px;
-  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.accordion-trigger:not(.open) .accordion-icon {
+  transform: rotate(0deg);
 }
 
 .accordion-trigger.open .accordion-icon {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 }
 
 .badge {
-  margin-left: auto;
+  margin-left: 6px;
   padding: 1px 8px;
   border-radius: 20px;
   background: #e2e8f0;

@@ -94,34 +94,34 @@
     <!-- ── Accordion sections ────────────────────────────────── -->
     <section id="details-section" class="details-section hidden">
       <div class="accordion" id="acc-experience">
-        <button class="accordion-trigger" type="button" data-target="acc-experience-body">
-          <span class="accordion-icon">▸</span>
+        <button class="accordion-trigger open" type="button" data-target="acc-experience-body">
           Experience
           <span id="exp-count" class="badge"></span>
+          <span class="accordion-icon">▼</span>
         </button>
-        <div id="acc-experience-body" class="accordion-body collapsed">
+        <div id="acc-experience-body" class="accordion-body">
           <div id="experience-list" class="detail-list"></div>
         </div>
       </div>
 
       <div class="accordion" id="acc-education">
-        <button class="accordion-trigger" type="button" data-target="acc-education-body">
-          <span class="accordion-icon">▸</span>
+        <button class="accordion-trigger open" type="button" data-target="acc-education-body">
           Education
           <span id="edu-count" class="badge"></span>
+          <span class="accordion-icon">▼</span>
         </button>
-        <div id="acc-education-body" class="accordion-body collapsed">
+        <div id="acc-education-body" class="accordion-body">
           <div id="education-list" class="detail-list"></div>
         </div>
       </div>
 
       <div class="accordion" id="acc-certs">
-        <button class="accordion-trigger" type="button" data-target="acc-certs-body">
-          <span class="accordion-icon">▸</span>
+        <button class="accordion-trigger open" type="button" data-target="acc-certs-body">
           Certifications
           <span id="cert-count" class="badge"></span>
+          <span class="accordion-icon">▼</span>
         </button>
-        <div id="acc-certs-body" class="accordion-body collapsed">
+        <div id="acc-certs-body" class="accordion-body">
           <div id="certs-list" class="detail-list"></div>
         </div>
       </div>
@@ -130,11 +130,11 @@
     <!-- ── Raw JSON accordion ────────────────────────────────── -->
     <section id="json-section" class="json-section hidden">
       <div class="accordion">
-        <button class="accordion-trigger" type="button" data-target="json-body">
-          <span class="accordion-icon">▸</span>
+        <button class="accordion-trigger open" type="button" data-target="json-body">
           View Raw JSON
+          <span class="accordion-icon">▼</span>
         </button>
-        <div id="json-body" class="accordion-body collapsed">
+        <div id="json-body" class="accordion-body">
           <pre id="json-raw" class="json-raw"></pre>
         </div>
       </div>

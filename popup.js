@@ -44,7 +44,16 @@ async function sendExtractProfile(tabId) {
     if (!isNoReceiverError(e)) throw e;
     await chrome.scripting.executeScript({
       target: { tabId },
-      files: ["content.js"],
+      files: [
+        "functions/helpers.js",
+        "functions/experience.js",
+        "functions/education.js",
+        "functions/company.js",
+        "functions/activity.js",
+        "functions/connections.js",
+        "functions/misc-scrapers.js",
+        "content.js"
+      ],
     });
     return await chrome.tabs.sendMessage(tabId, { type: "EXTRACT_PROFILE" });
   }
