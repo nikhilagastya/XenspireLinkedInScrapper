@@ -24,6 +24,10 @@ const MOCK_SERVER_RECORDS = {
     company_id: "sabic",
     company_uuid: "62493f7e-9b92-40da-b381-705386852209",
     company_website: null,
+    personal_email: "amanda.d.personal@gmail.com",
+    personal_phone: "+1 555-019-2041",
+    work_email: "adennis@sabic.com",
+    work_phone: "+1 555-901-3844",
     employees_in_linkedin: 38358,
     experience_years: 9,
     open_to_work_flag: false,
@@ -56,6 +60,10 @@ const MOCK_SERVER_RECORDS = {
     company_id: "doka-usa",
     company_uuid: "330f14d9-138f-4950-bde8-ba70899f9231",
     company_website: null,
+    personal_email: "sarah.maher99@yahoo.com",
+    personal_phone: "+1 555-882-1023",
+    work_email: "sarah.maher@doka.com",
+    work_phone: "+1 555-773-9090",
     employees_in_linkedin: 263,
     experience_years: 13,
     open_to_work_flag: false,
@@ -72,15 +80,23 @@ const MOCK_SERVER_RECORDS = {
 
 /**
  * Look up a known server record by LinkedIn ID slug.
- * For unknown profiles, generates a mock with slightly altered fields to demo diffing.
  */
 function getServerRecord(linkedinId, scrapedProfile) {
+  // If we have a hardcoded mock record, return it (Existing Contact)
   if (MOCK_SERVER_RECORDS[linkedinId]) {
     return structuredClone(MOCK_SERVER_RECORDS[linkedinId]);
   }
 
-  // Unknown profile → generate mock "server" data with intentional diffs
-  if (!scrapedProfile) return null;
+  // Set this to `true` if you want to test the "Compare" UI on every profile you visit.
+  // Set this to `false` to test the "New Contact" (data not on server) flow.
+  const SIMULATE_ALL_EXIST = false;
+
+  if (!SIMULATE_ALL_EXIST) {
+    return null; // Simulate profile not existing in the backend database
+  }
+
+  // Generate mock "server" data with intentional diffs for testing
+
 
   return {
     _id: { $oid: "mock-" + Date.now().toString(16) },
@@ -104,6 +120,10 @@ function getServerRecord(linkedinId, scrapedProfile) {
       : null,
     company_uuid: null,
     company_website: null,
+    personal_email: "mock.personal@example.com",
+    personal_phone: "+1 000-000-0000",
+    work_email: "mock.work@company.com",
+    work_phone: "+1 111-111-1111",
     open_to_work_flag: false,
     open_to_network_flag: false,
     profile_connections: null,

@@ -111,6 +111,27 @@
 
       <!-- ── Accordion sections ────────────────────────────────── -->
       <section id="details-section" class="details-section hidden">
+        
+        <div class="accordion hidden" id="acc-personal">
+          <button class="accordion-trigger open" type="button" data-target="acc-personal-body">
+            Personal Details (Server)
+            <span class="accordion-icon">▼</span>
+          </button>
+          <div id="acc-personal-body" class="accordion-body">
+            <div id="personal-list" class="detail-list"></div>
+          </div>
+        </div>
+
+        <div class="accordion hidden" id="acc-work">
+          <button class="accordion-trigger open" type="button" data-target="acc-work-body">
+            Work Details (Server)
+            <span class="accordion-icon">▼</span>
+          </button>
+          <div id="acc-work-body" class="accordion-body">
+            <div id="work-list" class="detail-list"></div>
+          </div>
+        </div>
+
         <div class="accordion" id="acc-experience">
           <button class="accordion-trigger open" type="button" data-target="acc-experience-body">
             Experience

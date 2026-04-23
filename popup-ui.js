@@ -386,6 +386,53 @@ function initAccordions() {
 /* ─── Full Render Pipeline ───────────────────────────────────────── */
 
 /**
+ * Render the Server Details (Personal and Work Contact Info) if available.
+ * @param {Object|null} serverRec - Server record data
+ */
+function renderServerDetails(serverRec) {
+  const accPersonal = document.getElementById("acc-personal");
+  const accWork = document.getElementById("acc-work");
+  const personalList = document.getElementById("personal-list");
+  const workList = document.getElementById("work-list");
+
+  if (!serverRec) {
+    hide(accPersonal);
+    hide(accWork);
+    return;
+  }
+
+  // Personal Info
+  personalList.innerHTML = "";
+  let hasPersonal = false;
+  if (serverRec.personal_email) {
+    personalList.appendChild(createDetailItem("Email", serverRec.personal_email));
+    hasPersonal = true;
+  }
+  if (serverRec.personal_phone) {
+    personalList.appendChild(createDetailItem("Phone", serverRec.personal_phone));
+    hasPersonal = true;
+  }
+
+  if (hasPersonal) show(accPersonal);
+  else hide(accPersonal);
+
+  // Work Info
+  workList.innerHTML = "";
+  let hasWork = false;
+  if (serverRec.work_email) {
+    workList.appendChild(createDetailItem("Email", serverRec.work_email));
+    hasWork = true;
+  }
+  if (serverRec.work_phone) {
+    workList.appendChild(createDetailItem("Phone", serverRec.work_phone));
+    hasWork = true;
+  }
+
+  if (hasWork) show(accWork);
+  else hide(accWork);
+}
+
+/**
  * Render the entire popup UI after a successful capture.
  * @param {Object} profile        - Scraped profile in final format
  * @param {Object|null} serverRec - Server record (null if new contact)
@@ -405,6 +452,9 @@ function renderCapturedProfile(profile, serverRec, compareResults) {
   } else {
     hide(document.getElementById("compare-section"));
   }
+
+  // Server-only Contact Details
+  renderServerDetails(serverRec);
 
   // Detail sections
   renderExperience(profile.profile_experience_full);
